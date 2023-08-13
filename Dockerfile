@@ -3,6 +3,8 @@ WORKDIR /opt/CTFd
 RUN mkdir -p /opt/CTFd /var/log/CTFd /var/uploads
 
 # hadolint ignore=DL3008
+RUN apt-get update
+RUN apt-get install libssl1.1=1.1.1n-0+deb11u5 libssl-dev -y
 RUN echo 'deb http://mirrors.aliyun.com/debian/ bullseye main non-free contrib \
  deb http://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib \
  deb http://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib \
